@@ -1,0 +1,269 @@
+@import "/node_modules/augmented-ui/augmented-ui.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Jura&family=Orbitron&display=swap");
+
+:root {
+	--color-purple: #711c91;
+	--color-pink: #ea00d9;
+	--color-blue-light: rgb(10, 189, 198);
+	--color-blue-light-raw: 10, 189, 198;
+	--color-blue-mid: #133e7c;
+	--color-blue-dark: #091833;
+	--color-yellow: #f9c434;
+	--color-react: rgb(97, 218, 251);
+	--color-react-raw: 97, 218, 251;
+	--color-nodejs: rgb(121, 205, 41);
+	--color-nodejs-raw: 121, 205, 41;
+	--color-express: #fff;
+	--color-express-raw: 255, 255, 255;
+	--color-firebase: rgb(245, 130, 32);
+	--color-firebase-raw: 245, 130, 32;
+}
+
+*,
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.App {
+	align-items: center;
+	background-image: url("./img/Matrix-Rainfall.png");
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	width: 100vw;
+	padding: 20vh 0;
+	gap: 200px;
+}
+
+.card-wrapper1 {
+	position: relative;
+	width: 300px;
+	aspect-ratio: 2 / 3;
+}
+
+.card-body1 {
+	--aug-tl: 50px;
+	--aug-tr: 30px;
+	--aug-br: 60px;
+	--aug-br-inset1: 50%;
+	--aug-br-inset2: 10%;
+	--aug-border-bg: linear-gradient(150deg, var(--color-pink), var(--color-blue-light));
+	--aug-inlay-all: 4px;
+	--aug-inlay-bg: transparent;
+	background-image: url("./img/girl-barbell-curls.jpg");
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.card-title1 {
+	font-family: Orbitron, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 1.25em;
+
+	color: #ffffff;
+
+	text-shadow: 2px 2px var(--color-pink);
+	position: absolute;
+	top: 10%;
+	left: -15%;
+}
+
+.card-subtitle1 {
+	font-family: Jura, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 1.25em;
+	color: #ffffff;
+	text-shadow: 2px 2px var(--color-pink);
+	position: absolute;
+	top: calc(10% + 2em);
+	left: -5%;
+}
+
+.card-description1 {
+	font-family: Jura, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 1.25em;
+	color: #ffffff;
+	text-shadow: 1px 1px var(--color-blue-light);
+	position: absolute;
+	top: 79%;
+	left: 34%;
+	width: 230px;
+	padding: 30px;
+	background: linear-gradient(150deg, var(--color-purple), var(--color-blue-light));
+	--aug-tl: 50px;
+}
+
+.card-wrapper2 {
+	display: grid;
+	grid-template-columns: 0.25fr 130px 0.5fr 130px 0.25fr;
+	grid-template-rows: 0.5fr 0.75fr 0.5fr 2fr 0.7fr 1fr;
+	grid-template-areas:
+		". body-top body-top body-top ."
+		"title title title title title"
+		"subtitle subtitle subtitle subtitle subtitle "
+		". body-mid body-mid body-mid ."
+		". card-action-demo body-bottom card-action-source ."
+		"stack-icons stack-icons stack-icons stack-icons stack-icons";
+	width: 350px;
+	aspect-ratio: 9 / 16;
+	cursor: pointer;
+	transform-style: preserve-3d;
+}
+
+.card-body2 {
+	--aug-tl: 50px;
+	--aug-tr: 30px;
+	--aug-br: 20px;
+	--aug-br-extend2: 33%;
+	--aug-bl: 20px;
+	--aug-bl-extend1: 33%;
+	--aug-border-bg: linear-gradient(150deg, var(--color-pink), var(--color-blue-light));
+	--aug-inlay-all: 4px;
+	--aug-inlay-bg: transparent;
+	background-image: url("/src/img/girl-barbell-curls.jpg");
+	background-size: cover;
+	height: 86%;
+	width: 100%;
+	grid-column: 2 / -2;
+	grid-row: body-top-start / body-bottom-end;
+	z-index: 1;
+}
+
+.card-title2 {
+	font-family: Orbitron, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 1.25em;
+	color: #ffffff;
+	text-shadow: 2px 2px var(--color-pink);
+	grid-area: title;
+	z-index: 2;
+	transform: translateZ(80px);
+}
+
+.card-subtitle2 {
+	font-family: Jura, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 1.25em;
+	color: #ffffff;
+	text-shadow: 2px 2px var(--color-pink);
+	grid-area: subtitle;
+	z-index: 2;
+	transform: translateZ(35px);
+}
+
+.card-actions {
+}
+
+.btn-card-action {
+	border: none;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-family: "Orbitron", sans-serif;
+	padding: 1rem;
+	text-transform: uppercase;
+	transition: all 0.1s ease-in;
+}
+
+.btn-card-action i {
+	font-size: 1rem;
+	margin-right: 5px;
+}
+
+.btn-card-action:hover {
+	filter: brightness(115%);
+}
+
+.btn-card-action:active {
+	filter: brightness(85%);
+}
+
+.btn-demo {
+	--aug-tl: 20px;
+	--aug-border-bg: var(--color-pink);
+	--aug-inlay-all: 2px;
+	--aug-inlay-bg: linear-gradient(300deg, var(--color-pink) -9.08%, var(--color-purple) 83.6%);
+	grid-area: card-action-demo;
+	z-index: 2;
+	transform: translateZ(20px);
+}
+
+.btn-source {
+	--aug-tr: 20px;
+	--aug-border-bg: var(--color-blue-light);
+	--aug-inlay-all: 2px;
+	--aug-inlay-bg: linear-gradient(300deg, var(--color-blue-light) -9.08%, var(--color-blue-mid) 83.6%);
+	grid-area: card-action-source;
+	z-index: 2;
+	transform: translateZ(20px);
+}
+
+.card-icon-stack {
+	grid-area: stack-icons;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	padding-top: 20px;
+	width: 100%;
+}
+
+.stack-icon-wrapper {
+	--aug-all-width: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.85;
+	transition: all 0.1s ease-in;
+	transform: translateZ(35px);
+}
+
+.stack-icon-wrapper img {
+	width: 60%;
+}
+
+.stack-icon-wrapper:hover {
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+.stack-icon-wrapper.react {
+	--aug-border-bg: var(--color-react);
+	background: linear-gradient(150deg, transparent, rgba(var(--color-react-raw), 0.5));
+}
+
+.stack-icon-wrapper.nodejs {
+	--aug-border-bg: var(--color-nodejs);
+	background: linear-gradient(150deg, transparent, rgba(var(--color-nodejs-raw), 0.5));
+}
+
+.stack-icon-wrapper.express {
+	--aug-border-bg: var(--color-express);
+	background: linear-gradient(150deg, transparent, rgba(var(--color-express-raw), 0.5));
+}
+
+.stack-icon-wrapper.firebase {
+	--aug-border-bg: var(--color-firebase);
+	background: linear-gradient(150deg, transparent, rgba(var(--color-firebase-raw), 0.5));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
